@@ -5,4 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>test-driven-dev</name>
   <description>test-driven-dev</description>
+  <properties>
+  <junit-version>4.8.1</junit-version>
+  </properties>
+  <dependencies>
+  	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+		</dependency>
+  </dependencies>
+  
 </project>
