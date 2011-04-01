@@ -13,19 +13,23 @@ public class OrderStateTester {
 	private static String HIGHLAND_PARK = "Highland Park";
 	private Warehouse warehouse = new WarehouseImpl();
 
+	// Step1: SetUp
 	@Before
-	public void setUp()
-	{
-		warehouse.add(TALISKER,20);
-		warehouse.add(HIGHLAND_PARK,30);
+	public void setUp() {
+		warehouse.add(TALISKER, 20);
+		warehouse.add(HIGHLAND_PARK, 30);
 	}
-	
-	@Test
-	  public void testOrderIsFilledIfEnoughInWarehouse() {
-		    Order order = new Order(TALISKER, 15);
-		    order.fill(warehouse);
-		    assertTrue(order.isOrderFilled());
-		    assertEquals(new Integer(0), warehouse.getInventoryQuantity(TALISKER));
-		  }
 
+	@Test
+	public void testOrderIsFilledIfEnoughInWarehouse() {
+
+		// Step2: Exercise
+		Order order = new Order(TALISKER, 15);
+		order.fill(warehouse);
+		// Step3: Verify
+		assertTrue(order.isOrderFilled());
+		assertEquals(new Integer(5), warehouse.getInventoryQuantity(TALISKER));
+	}
+
+	// Step4: Tear down - No explicit tear down. Left for GC
 }

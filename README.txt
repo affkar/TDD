@@ -6,3 +6,4 @@ Frameworks:
 JUnit
 JMock
 EasyMock
+TestNG
