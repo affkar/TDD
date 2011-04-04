@@ -9,4 +9,6 @@ public interface Warehouse {
 	public void add(String product,Integer quantity);
 	public Map<String, Integer> getProducts();
 	public Integer getInventoryQuantity(String product);
+	public void init();
+	public void report();
 }

@@ -1,5 +1,7 @@
 package com.github.tdd.domain.impl;
 
+import java.util.Map;
+
 import com.github.tdd.domain.Warehouse;
 
 public class Order {
@@ -18,9 +20,9 @@ public class Order {
 	}
 
 	public void fill(Warehouse warehouse) {
-		System.out.println("Filling from Warehouse: " + warehouse.getName());
 		
-		Integer quantityAvailable = warehouse.getProducts().get(productName);
+		Map<String, Integer> products = warehouse.getProducts();
+		Integer quantityAvailable = products.get(productName);
 		
 		if(quantity<quantityAvailable)
 		{ 
@@ -37,6 +39,9 @@ public class Order {
 		return isFilled;
 	}
 
-
+    public void report(Warehouse warehouse)
+    {
+    	warehouse.report();
+    }
 
 }
