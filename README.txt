@@ -3,7 +3,6 @@ the use of unit-testing frameworks and integration-testing frameworks in Java.
 
 Frameworks:
 
-JUnit
-JMock
-EasyMock
-TestNG
+JUnit 4.8.1
+EasyMock 3.0
+

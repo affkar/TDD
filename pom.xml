@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>test-driven-dev</groupId>
+	<groupId>com.github.stratwine </groupId>
 	<artifactId>test-driven-dev</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>test-driven-dev</name>
@@ -10,33 +10,36 @@
 		<junit-version>4.8.1</junit-version>
 	</properties>
 
-	<repositories>
+ <!--  Artifacts Upload Location -->
 
-      <!--  JBoss Public Repository -->
-		<repository>
-			<id>org.jboss.repositories.public-jboss</id>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+  <distributionManagement>
+ 
+ 	 <snapshotRepository>
+      <uniqueVersion>true</uniqueVersion>
+      <id>sonatype-nexus-snapshots</id>
+      <name>test-driven-dev</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
 
-	<!--  Public Repository from mvnrepository.com -->
-		<repository>
-			<id>com.mvnrepository</id>
-			<url>http://mvnrepository.com/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+	<!-- SCM Info -->
 
+	<scm>
+		<url>git://github.com/stratwine/TDD.git</url>
+		<connection>git://github.com/stratwine/TDD.git</connection>
+	</scm>
+
+	<!-- State Developers Info -->
+	<developers>
+		<developer>
+			<id>stratwine</id>
+			<name>Vishwanath</name>
+			<email>tovishwanath@gmail.com</email>
+		</developer>
+	</developers>
+
+	<!-- Third Party Dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -49,7 +52,7 @@
 			<artifactId>easymock</artifactId>
 			<version>3.0</version>
 		</dependency>
-		</dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -63,7 +66,8 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			</plugins>
-	</build>
 
+			
+		</plugins>
+	</build>
 </project>
