@@ -5,4 +5,4 @@ Frameworks:
 
 JUnit 4.8.1
 EasyMock 3.0
-
+jMock
